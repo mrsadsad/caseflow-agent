@@ -1,0 +1,35 @@
+{
+  "mode": "demo",
+  "strategies": [
+    "direct",
+    "agent"
+  ],
+  "case_ids": [
+    "refund_valid",
+    "refund_expired",
+    "return_delivered",
+    "missing_order",
+    "prompt_injection",
+    "foreign_order",
+    "already_refunded",
+    "extended_window",
+    "foreign_customer"
+  ],
+  "max_steps": 8,
+  "max_model_calls": 72,
+  "worst_case_calls": 81,
+  "source_sha256": {
+    "__init__.py": "31f2268b135765ca6eaaa230ee97cac53fb2e9708cdb0a29531ca24939600a7d",
+    "__main__.py": "0c21c30303d58b8b1e90f4feb596aa9b6247586623f35bad1586069e6125d9a5",
+    "evaluation.py": "011a25272a310a54c42afd25c09b735ef965be1f9054b4cb9e5bd3caac56a38b",
+    "fixtures.py": "993adfeb9b28500540a1a629510bbc56e94e05df8b03cc58f22f0d233c075c62",
+    "provider.py": "8c0bfaf9bd9a5caea1bc6f94f3a5ecdb5298cb5ffa49a2d11343c553ed439573",
+    "runtime.py": "7127afd540a171129b1ff308e9879e65f68f1bc52d878387912f5f48e09833dd",
+    "server.py": "a7a27c7ff40d6e92ef47eb2aa34bc71b439cbd4c124e60eec72c1e468489c409",
+    "store.py": "f36c868e81f3de66eacf7d95cba7e45693616f8624a2b6d997e79e1f2ef872e4",
+    "tools.py": "b10b5d3f486d52b62775a73b91b1e3fcf98fc51cb1b2588d1d73e1c773e1206d"
+  },
+  "model": null,
+  "data_kind": "synthetic_development_cases",
+  "created_at": "2026-10-02T17:54:36.744353+00:00"
+}

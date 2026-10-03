@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.pytest_cache/
+*.log
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+runs/
+*.sqlite3*
+build/
+dist/
+*.egg-info/

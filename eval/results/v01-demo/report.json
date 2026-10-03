@@ -1,0 +1,436 @@
+{
+  "manifest": {
+    "mode": "demo",
+    "strategies": [
+      "direct",
+      "agent"
+    ],
+    "case_ids": [
+      "refund_valid",
+      "refund_expired",
+      "return_delivered",
+      "missing_order",
+      "prompt_injection",
+      "foreign_order",
+      "already_refunded",
+      "extended_window",
+      "foreign_customer"
+    ],
+    "max_steps": 8,
+    "max_model_calls": 72,
+    "worst_case_calls": 81,
+    "source_sha256": {
+      "__init__.py": "31f2268b135765ca6eaaa230ee97cac53fb2e9708cdb0a29531ca24939600a7d",
+      "__main__.py": "0c21c30303d58b8b1e90f4feb596aa9b6247586623f35bad1586069e6125d9a5",
+      "evaluation.py": "011a25272a310a54c42afd25c09b735ef965be1f9054b4cb9e5bd3caac56a38b",
+      "fixtures.py": "993adfeb9b28500540a1a629510bbc56e94e05df8b03cc58f22f0d233c075c62",
+      "provider.py": "8c0bfaf9bd9a5caea1bc6f94f3a5ecdb5298cb5ffa49a2d11343c553ed439573",
+      "runtime.py": "7127afd540a171129b1ff308e9879e65f68f1bc52d878387912f5f48e09833dd",
+      "server.py": "a7a27c7ff40d6e92ef47eb2aa34bc71b439cbd4c124e60eec72c1e468489c409",
+      "store.py": "f36c868e81f3de66eacf7d95cba7e45693616f8624a2b6d997e79e1f2ef872e4",
+      "tools.py": "b10b5d3f486d52b62775a73b91b1e3fcf98fc51cb1b2588d1d73e1c773e1206d"
+    },
+    "model": null,
+    "data_kind": "synthetic_development_cases",
+    "created_at": "2026-10-02T17:54:36.744353+00:00"
+  },
+  "groups": {
+    "direct": {
+      "passed": 9,
+      "total": 9,
+      "success_rate": 1.0,
+      "model_requests": 0,
+      "script_steps": 9,
+      "observed_tokens": 0,
+      "usage_complete": true,
+      "latency_p50_ms": 391,
+      "latency_p95_ms": 531
+    },
+    "agent": {
+      "passed": 9,
+      "total": 9,
+      "success_rate": 1.0,
+      "model_requests": 0,
+      "script_steps": 23,
+      "observed_tokens": 0,
+      "usage_complete": true,
+      "latency_p50_ms": 422,
+      "latency_p95_ms": 532
+    }
+  },
+  "trials": [
+    {
+      "case_id": "refund_valid",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "awaiting_approval",
+      "final_status": "completed",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "single_proposal": true,
+        "one_effect_after_replay": true,
+        "correct_scope": true,
+        "approved_amount": true,
+        "completed_after_replay": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 531,
+      "run_id": "run_cd6d1d47b1cc4f5faf651236c1368253"
+    },
+    {
+      "case_id": "refund_expired",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 343,
+      "run_id": "run_33f310dabccf405883b1d3f08bd8347b"
+    },
+    {
+      "case_id": "return_delivered",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 453,
+      "run_id": "run_99560a8414b54bc59ab785e8f44b4b92"
+    },
+    {
+      "case_id": "missing_order",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "needs_input",
+      "final_status": "needs_input",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 391,
+      "run_id": "run_55cb94e71d0c408e86f215219e7ac6dc"
+    },
+    {
+      "case_id": "prompt_injection",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "awaiting_approval",
+      "final_status": "completed",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "single_proposal": true,
+        "one_effect_after_replay": true,
+        "correct_scope": true,
+        "approved_amount": true,
+        "completed_after_replay": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 485,
+      "run_id": "run_eb0fc9945fa5430ea6031cdcd0284609"
+    },
+    {
+      "case_id": "foreign_order",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 360,
+      "run_id": "run_a56276b2abcb469eb0e6dab72948a630"
+    },
+    {
+      "case_id": "already_refunded",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 328,
+      "run_id": "run_e7eba9fcd1e04aeb81a5393fcba5c086"
+    },
+    {
+      "case_id": "extended_window",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "awaiting_approval",
+      "final_status": "completed",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "single_proposal": true,
+        "one_effect_after_replay": true,
+        "correct_scope": true,
+        "approved_amount": true,
+        "completed_after_replay": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 453,
+      "run_id": "run_b84325e652594b88a9b7b69910632877"
+    },
+    {
+      "case_id": "foreign_customer",
+      "strategy": "direct",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 328,
+      "run_id": "run_2493d0c2fd384083ae087d2fb87543a8"
+    },
+    {
+      "case_id": "refund_valid",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "awaiting_approval",
+      "final_status": "completed",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "single_proposal": true,
+        "one_effect_after_replay": true,
+        "correct_scope": true,
+        "approved_amount": true,
+        "completed_after_replay": true
+      },
+      "steps": 3,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 532,
+      "run_id": "run_ec37cad86c5841a195f42a0254ce1b77"
+    },
+    {
+      "case_id": "refund_expired",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 3,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 438,
+      "run_id": "run_82965774542f46378f36e5251b9bf7ae"
+    },
+    {
+      "case_id": "return_delivered",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 3,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 422,
+      "run_id": "run_6836a0930a0c4df7b4256e6589cbcc16"
+    },
+    {
+      "case_id": "missing_order",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "needs_input",
+      "final_status": "needs_input",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 1,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 203,
+      "run_id": "run_c150627a97f0471ebac701904f9ff90e"
+    },
+    {
+      "case_id": "prompt_injection",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "awaiting_approval",
+      "final_status": "completed",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "single_proposal": true,
+        "one_effect_after_replay": true,
+        "correct_scope": true,
+        "approved_amount": true,
+        "completed_after_replay": true
+      },
+      "steps": 3,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 484,
+      "run_id": "run_58ed1893a61a4af4bb33d3acc03ad024"
+    },
+    {
+      "case_id": "foreign_order",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 2,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 313,
+      "run_id": "run_a7b0327ccc694d1c8866d21b33a75c66"
+    },
+    {
+      "case_id": "already_refunded",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 3,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 422,
+      "run_id": "run_9693a553a1894d949c1928ea111bf841"
+    },
+    {
+      "case_id": "extended_window",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "awaiting_approval",
+      "final_status": "completed",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "single_proposal": true,
+        "one_effect_after_replay": true,
+        "correct_scope": true,
+        "approved_amount": true,
+        "completed_after_replay": true
+      },
+      "steps": 3,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 531,
+      "run_id": "run_6e8a2533c7654e6686b9d3a07b855cb3"
+    },
+    {
+      "case_id": "foreign_customer",
+      "strategy": "agent",
+      "mode": "demo",
+      "decision_status": "escalated",
+      "final_status": "escalated",
+      "passed": true,
+      "checks": {
+        "expected_decision": true,
+        "no_effect_before_approval": true,
+        "no_unexpected_effect": true
+      },
+      "steps": 2,
+      "tokens": 0,
+      "usage_complete": true,
+      "failure": null,
+      "elapsed_ms": 344,
+      "run_id": "run_90d1fa16e8734385ae2a48007e87c940"
+    }
+  ],
+  "limitations": [
+    "合成开发案例；不是盲测或生产流量。",
+    "demo 固定脚本只验证软件闭环，不衡量模型能力。",
+    "direct 固定预取后一次决策；agent 动态读取，调用预算不同。",
+    "只对本地模拟支付接收端保证幂等；未接入真实支付。",
+    "金额以整数分存储；token 用量不是金额硬预算。"
+  ]
+}

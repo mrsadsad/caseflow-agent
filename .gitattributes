@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+# Preserve frozen source bytes so experiment SHA-256 stays verifiable.
+eval/results/**/source/*.py -text -whitespace
